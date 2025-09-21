@@ -82,6 +82,10 @@ const SignUp=()=>{
             ...formData,
             [event.target.name]:event.target.value
         }))
+        setErrors((errors)=>({
+            ...errors,
+            [event.target.name]:""
+        }))
 
     }
     return(
@@ -91,7 +95,7 @@ const SignUp=()=>{
             <NavBar/>
             <h1 className="text-2xl text-blue-600 font-bold">Join BlogVerse</h1>
             <p className="text-xl text-gray-600 text-center font-semibold">Create your account and <br></br>start your Blogging journey today</p>
-            <form onSubmit={handleSubmit} className=" flex flex-col border-1 border-gray-400 w-1/3 py-5 items-center gap-5 rounded-xl">
+            <form onSubmit={handleSubmit} className=" flex flex-col border-1 border-gray-400 w-[90%] sm:w-[50%] lg:w-1/3 py-7   items-center gap-5 rounded-xl">
                 <div className="w-[90%]  flex flex-col gap-2">
                     <p className="text-md text-gray-700 font-semibold">Full Name</p>
                     <div className='relative'>
@@ -158,7 +162,7 @@ const SignUp=()=>{
                 {success && <p class="text-green-500">{success}</p>}
                 <button type="submit"className="w-[90%] bg-purple-500 py-3 text-white font-semibold rounded-xl cursor-pointer flex justify-center items-center gap-2"> <CircleUser className=""/> <p>Create Account</p></button>
                 <div className="border-[0.5px] border-gray-400 w-[90%] mt-4"></div>
-                <p className="text-gray-700 font-semibold">Aldready have an Account?<Link to="/signin" className="text-purple-500 font-semibold">Sign In Here</Link></p>
+                <p className="text-gray-700 font-semibold">Aldready have an Account?<Link to="/login" className="text-purple-500 font-semibold">Sign In Here</Link></p>
                 <Link to="/home" className="text-gray-700 font-semibold py-3 w-[90%] rounded-xl cursor-pointer text-center hover:bg-gray-200">Back to Home</Link>
             </form>
         </div>
